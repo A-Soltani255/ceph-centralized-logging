@@ -1,0 +1,25 @@
+{
+  "name": "ceph-centralized-logging-docs",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local documentation validation only; publication rights unresolved",
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "check": "node scripts/validation/check-repository.mjs",
+    "lint:markdown": "markdownlint-cli2 \"**/*.md\" \"!node_modules\"",
+    "check:mermaid": "node scripts/validation/check-mermaid.mjs"
+  },
+  "devDependencies": {
+    "jsdom": "31.0.0",
+    "markdownlint-cli2": "0.24.0",
+    "mermaid": "12.3.0",
+    "yaml": "2.9.1"
+  },
+  "overrides": {
+    "re2js": "2.8.7",
+    "katex": "0.18.2"
+  }
+}
