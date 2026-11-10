@@ -1,0 +1,19 @@
+volumeMounts:
+  - name: ceph-server-tls
+    mountPath: /fluentd/ceph-tls
+    readOnly: true
+  - name: ceph-client-ca
+    mountPath: /fluentd/ceph-client-ca
+    readOnly: true
+volumes:
+  - name: ceph-server-tls
+    secret:
+      secretName: fluentd-ceph-server-tls
+      defaultMode: 0440
+  - name: ceph-client-ca
+    secret:
+      secretName: fluentbit-ceph-node-01-tls
+      items:
+        - key: ca.crt
+          path: ca.crt
+      defaultMode: 0440
