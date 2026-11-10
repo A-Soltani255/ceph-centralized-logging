@@ -1,0 +1,14 @@
+flowchart TB
+  subgraph Host[Physical Ceph node]
+    Files[Ceph log files] --> Agent[Non-root Fluent Bit]
+    Agent <--> State[SQLite offsets and filesystem chunks]
+  end
+  Agent -->|Forward over TLS, TCP 443| VIP[HAProxy / Keepalived VIP]
+  VIP -->|TCP passthrough, example NodePort 30081| Ingress[ingress-nginx SNI passthrough]
+  Ingress -->|TLS to ClusterIP port 24225| Receiver[Shared Fluentd: mTLS terminates here]
+  K8s[Kubernetes log agents] -->|Existing input 24224| Receiver
+  Receiver -->|ceph.ops and ceph.audit| CephOutput[Ceph output and persistent buffer]
+  Receiver -->|Existing Kubernetes route| K8sOutput[Kubernetes output and persistent buffer]
+  CephOutput -->|Separate authenticated ES connection| ES[logs-ceph-default]
+  ES --> Kibana[Kibana Discover]
+  K8sOutput --> Existing[Existing Kubernetes destination]
