@@ -1,0 +1,17 @@
+apiVersion: fluentd.fluent.io/v1alpha1
+kind: ClusterInput
+metadata:
+  name: ceph-forward-input
+  labels:
+    input.fluentd.fluent.io/enabled: "true"
+spec:
+  inputs:
+    - forward:
+        bind: 0.0.0.0
+        port: 24225
+        transport:
+          protocol: tls
+          certPath: /fluentd/ceph-tls/tls.crt
+          privateKeyPath: /fluentd/ceph-tls/tls.key
+          caPath: /fluentd/ceph-client-ca/ca.crt
+          clientCertAuth: true
