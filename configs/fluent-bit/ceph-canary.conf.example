@@ -1,0 +1,24 @@
+[SERVICE]
+    Flush 1
+    Daemon Off
+    Log_Level info
+
+[INPUT]
+    Name dummy
+    Tag ceph.ops
+    Dummy {"message":"CEPH_FORWARD_CANARY_REPLACE_WITH_UNIQUE_ID","source":"ceph-canary","ceph_host":"ceph-node-02"}
+    Samples 1
+
+[OUTPUT]
+    Name forward
+    Match ceph.ops
+    Host logs.example.com
+    Port 443
+    Require_ack_response On
+    Retry_Limit 2
+    tls On
+    tls.verify On
+    tls.vhost logs.example.com
+    tls.ca_file /etc/fluent-bit/certs/server-ca.crt
+    tls.crt_file /etc/fluent-bit/certs/client-fullchain.crt
+    tls.key_file /etc/fluent-bit/certs/client.key
