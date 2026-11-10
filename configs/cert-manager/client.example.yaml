@@ -1,0 +1,20 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: fluentbit-ceph-node-02
+  namespace: fluentd
+spec:
+  secretName: fluentbit-ceph-node-02-tls
+  commonName: ceph-node-02.example.com
+  dnsNames:
+    - ceph-node-02.example.com
+  duration: 2160h
+  renewBefore: 360h
+  privateKey:
+    rotationPolicy: Always
+  usages:
+    - digital signature
+    - client auth
+  issuerRef:
+    name: vault-issuer
+    kind: ClusterIssuer
