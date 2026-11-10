@@ -1,0 +1,13 @@
+import fs from 'node:fs';
+import {JSDOM} from 'jsdom';
+const dom=new JSDOM('<!doctype html><html><body></body></html>');
+globalThis.window=dom.window;
+globalThis.document=dom.window.document;
+const {default:mermaid}=await import('mermaid');
+mermaid.initialize({startOnLoad:false,securityLevel:'strict'});
+const standalone=fs.readFileSync(new URL('../../diagrams/architecture.mmd',import.meta.url),'utf8').trim();
+const readme=fs.readFileSync(new URL('../../README.md',import.meta.url),'utf8');
+const inline=readme.match(/```mermaid\n([\s\S]*?)```/)[1].trim();
+if(standalone!==inline)throw Error('README diagram and standalone source differ');
+await mermaid.parse(standalone);
+console.log('Mermaid syntax parsed; README and standalone diagram match. Rendering is a separate check.');
