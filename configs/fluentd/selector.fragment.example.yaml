@@ -1,0 +1,10 @@
+spec:
+  clusterInputSelector:
+    matchLabels:
+      input.fluentd.fluent.io/enabled: "true"
+  clusterFilterSelector:
+    matchLabels:
+      filter.fluentd.fluent.io/enabled: "true"
+  clusterOutputSelector:
+    matchLabels:
+      output.fluentd.fluent.io/enabled: "true"
