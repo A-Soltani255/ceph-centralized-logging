@@ -1,6 +1,6 @@
 # Engineering lessons
 
-[Home](../README.md) · [Incident detail](troubleshooting.md) · [LinkedIn drafts](../linkedin/publishing-guide.md)
+[Home](../README.md) · [Incident detail](troubleshooting.md) · [Operations](operations.md)
 
 ## Access must match how a program reads
 

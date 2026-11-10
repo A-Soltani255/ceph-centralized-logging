@@ -2,7 +2,7 @@
 
 [Home](../README.md) · [Security](security.md) · [Publishing](publishing.md)
 
-**Status: keep private.** The source is an internal operational runbook. Company ownership, authorship rights and permission to distribute derived configuration/documentation have not been established. No LICENSE file is included and no open-source rights are granted. A license choice follows owner authorization; it cannot create rights the publisher does not hold.
+**Status: public release authorized.** On 10 November 2026, the repository owner explicitly authorized public release of the sanitized documentation, configurations, incident descriptions and commit history, and confirmed authority to release that material. The source remains a confidential internal operational runbook and is excluded. This records the owner’s authorization, not an independent legal determination of ownership. No LICENSE file is included and no open-source rights are granted. A license choice follows owner authorization; it cannot create rights the publisher does not hold.
 
 ## Sanitization performed
 
@@ -23,13 +23,13 @@ Manual full-source review found references to key/certificate handling but no co
 
 ## Residual publication concerns
 
-Architecture, incident history, selected versions, scope counts, operating patterns and historical metrics may still reveal internal engineering work even after identifier removal. Sanitization does not establish publication rights or make all business context nonconfidential. Ask the owner/security reviewers whether those facts can be released and remove/generalize them if needed.
+Architecture, incident history, selected versions, scope counts, operating patterns and historical metrics may still reveal internal engineering work even after identifier removal. Sanitization does not establish publication rights or make all business context nonconfidential. The owner approved release of the current sanitized material. Review newly contributed facts separately and remove/generalize any information outside that authorization.
 
-The LinkedIn posts use first-person wording as requested. The author must confirm personal involvement and the accuracy of attribution before publishing. They are drafts, not posts or endorsements. A private GitHub URL is not a public reader reference.
+The LinkedIn posts use first-person wording as requested. The author must confirm personal involvement and the accuracy of attribution before publishing. They are drafts, not posts or endorsements. The public repository is a reader reference; visibility does not itself grant an open-source license.
 
 ## Release gate
 
-- Obtain documented authorization for derived docs, extracted configurations, architecture and incidents.
+- Current sanitized release: owner authorization recorded above; assess authorization again when scope or source material changes.
 - Resolve authorship and select a suitable license only with authorized owners; then add the approved license text.
 - Approve the historical metrics and all first-person statements; remove any information outside the permitted scope.
 - Re-scan the complete Git history and staged release, including diagrams, generated assets and package lockfiles.

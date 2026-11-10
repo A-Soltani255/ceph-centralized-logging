@@ -67,12 +67,6 @@ ceph-centralized-logging/
 ├── examples/
 │   └── environment/
 │       └── ceph.env.example
-├── linkedin/
-│   ├── post-01-architecture.md
-│   ├── post-02-security.md
-│   ├── post-03-troubleshooting.md
-│   ├── post-04-lessons-learned.md
-│   └── publishing-guide.md
 ├── package-lock.json
 ├── package.json
 ├── README.md

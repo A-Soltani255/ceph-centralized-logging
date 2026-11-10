@@ -37,6 +37,6 @@ The Git history scan and final whitespace/status checks are recorded in the deli
 | Load, failover, loss/duplicate reconciliation, recovery time | No representative cluster or fault-injection environment; historical samples are not new benchmarks |
 | Certificate renewal deployment and revocation | No host automation or runtime reload/revocation test; documented as operational gates |
 | Every external documentation link | Selected primary references reviewed; no exhaustive external-link crawl or permanence guarantee |
-| Public release rights and licensing | Requires owner authorization and explicit visibility approval; no LICENSE supplied |
+| Publication and licensing | Owner confirmed authority and authorized public visibility on 10 November 2026; licensing remains undecided and no LICENSE is supplied |
 
-The project is ready for **private technical and publication review**, not certified production deployment or public release.
+The project is publicly available for technical review. Publication is not certification of production deployment, runtime security or an open-source license grant.

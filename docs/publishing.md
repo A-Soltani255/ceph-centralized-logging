@@ -2,46 +2,39 @@
 
 [Home](../README.md) · [Publication review](publication-review.md) · [Quality report](quality-report.md)
 
-Repository name: `ceph-centralized-logging`. Initial visibility: **private**. No public release or license grant is authorized. No LinkedIn publication or scheduling is authorized.
+Repository: [A-Soltani255/ceph-centralized-logging](https://github.com/A-Soltani255/ceph-centralized-logging). **Visibility: public.** The owner authorized the release and confirmed publication authority on 10 November 2026. Anonymous repository metadata and README access were verified after the visibility change. No license grant was requested or added. Nothing has been posted or scheduled on LinkedIn.
 
-Suggested description: Evidence-based Ceph logging architecture, sanitized configuration examples, mTLS guidance, and operations for shared Fluentd pipelines. Private publication review.
+## Publication history
 
-Suggested topics: `ceph`, `fluent-bit`, `fluentd`, `kubernetes`, `elasticsearch`, `observability`, `mtls`, `sre`, `logging`, `runbook`. Add topics only to accurately describe content; they are not claims of supported integrations.
+The project was created privately and scanned before publication. The initial GitHub connector could not access the private repository and local Git lacked usable credentials; the authenticated web editor published 64 sanitized files. A downloaded remote archive matched those local files byte-for-byte. The original internal runbook, its private sanitization map, live exports and secret material were excluded.
 
-## Local commit and authenticated publication
+The owner subsequently requested public visibility and confirmed authority at the release step. GitHub required account reauthentication, completed by the owner. At the owner's request, LinkedIn drafts and social media assets are maintained outside this repository. The original draft directory was removed from the current branch; earlier commits retain that sanitized historical content. No new social media assets are included here.
 
-Use only the authenticated owner's account. Check whether the repository exists and verify private visibility before any upload. Do not push over an unrelated existing project or change an existing public repository's visibility casually.
+## Future maintenance
 
-With GitHub CLI authenticated as the intended owner, these are the recovery steps if local Git credentials or connector repository access are unavailable:
+Use the authenticated owner’s account for writes. Verify the intended repository and inspect remote history before publishing. The first local preparation history and web-editor history were independent; never force-push the former over the latter. Start future work from a fresh clone of the remote or reconcile deliberately.
 
 ```bash
 gh auth status
 gh api user --jq .login
 gh repo view A-Soltani255/ceph-centralized-logging --json nameWithOwner,visibility
-```
-
-The repository has already been created privately for this task; do not run `gh repo create` again. From the completed local checkout, inspect the remote and history, rerun the scans, then authenticate Git and push only if the destination is still private and its history is compatible:
-
-```bash
-gh auth setup-git
-git remote -v
-git fetch origin
-git log --oneline --all --decorate -10
-git status --short
+gh repo clone A-Soltani255/ceph-centralized-logging ceph-centralized-logging-review
+cd ceph-centralized-logging-review
 npm ci --ignore-scripts
 npm run check
 npm run lint:markdown
 npm run check:mermaid
 gitleaks git --redact --no-banner .
-git push -u origin main
 ```
 
-If the remote contains an independent bootstrap commit, fetch/reconcile normally and review the resulting diff; do not force-push by default. If `origin` is absent, add `https://github.com/A-Soltani255/ceph-centralized-logging.git` after verifying its owner and private status. Never paste a token into a remote URL, commit, shell history or support message.
+Never place tokens in remote URLs or commits. Review actual Actions results for each revision. Run shell diagnostics with Bash and the documented prerequisites; publication does not authorize production changes.
 
-GitHub connector access and browser sign-in are separate authentication paths. The connector returned 404 for this private repository, local Git had no usable credentials, and browser bulk upload required the extension's disabled file-URL permission. Publication therefore uses GitHub's authenticated web text editor, preserving private visibility without expanding permissions. The remote history starts with its own README commit and differs from the independently prepared local Git history.
+## Presentation
 
-For future work, clone the populated remote after authenticating Git, or reconcile both histories deliberately. Do not force-push the independent local history over the web commits. Web-created shell files may lack executable mode; invoke them with `bash scripts/diagnostics/host-preflight.sh` (and equivalent paths), or review and commit executable modes from an authenticated checkout. Inspect Actions separately: publishing workflow source is not evidence that its checks passed.
+Description: Evidence-based Ceph logging architecture, sanitized configurations, mTLS guidance, operations and engineering lessons for shared Fluentd pipelines.
 
-## Public release checklist
+Topics: `ceph`, `fluent-bit`, `fluentd`, `kubernetes`, `elasticsearch`, `observability`, `mtls`, `sre`, `logging`. These describe content, not validated integration support.
 
-Complete [publication review](publication-review.md), resolve rights/licensing, review historical facts and first-person drafts, validate a maintained target stack, inspect full Git history and get explicit approval before changing visibility. Then verify anonymous access and update conditional LinkedIn links. Do not add passing CI, coverage, production-tested or certification badges without matching evidence.
+## Continuing review
+
+Confirm contribution rights, approve first-person attribution before posting, select a license only with authorized owners, and validate a maintained target stack. Scan changed files and complete history again before releases. Keep historical evidence distinct from proposed controls and unperformed runtime checks. Public GitHub availability is not evidence of deployment success.
