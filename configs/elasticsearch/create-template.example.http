@@ -1,0 +1,31 @@
+PUT _index_template/ceph-logs-template
+{
+  "index_patterns": ["logs-ceph-default"],
+  "priority": 501,
+  "data_stream": {},
+  "template": {
+    "settings": {
+      "index.number_of_shards": 1,
+      "index.number_of_replicas": 1
+    },
+    "mappings": {
+      "dynamic": true,
+      "properties": {
+        "@timestamp": { "type": "date" },
+        "message": { "type": "text" },
+        "log": { "type": "text" },
+        "ceph_host": { "type": "keyword" },
+        "ceph_fsid": { "type": "keyword" },
+        "ceph_dataset": { "type": "keyword" },
+        "ceph_parse_status": { "type": "keyword" },
+        "ceph_daemon_type": { "type": "keyword" },
+        "ceph_daemon_id": { "type": "keyword" },
+        "source_file": { "type": "keyword", "ignore_above": 1024 },
+        "ceph_debug_level": { "type": "integer" },
+        "ceph_sequence": { "type": "long" },
+        "ceph_rgw_status_code": { "type": "integer" },
+        "ceph_rgw_bytes_sent": { "type": "long" }
+      }
+    }
+  }
+}
