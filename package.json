@@ -2,7 +2,7 @@
   "name": "ceph-centralized-logging-docs",
   "version": "0.1.0",
   "private": true,
-  "description": "Local documentation validation only; publication rights unresolved",
+  "description": "Local documentation validation for the sanitized Ceph logging reference",
   "type": "module",
   "engines": {
     "node": ">=24"

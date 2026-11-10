@@ -2,7 +2,7 @@
 
 An evidence-based engineering guide to collecting logs from physical Ceph nodes into a shared Kubernetes logging platform, with Fluent Bit, mutual TLS, Fluentd, and Elasticsearch.
 
-**Publication status: private review draft.** Publication rights and licensing are unresolved. No open-source license is granted. The confidential source runbook is deliberately excluded. All infrastructure identities are placeholders. Read the [publication review](docs/publication-review.md) before sharing this project or its LinkedIn drafts.
+**Publication status: public reference project.** The repository owner authorized public release of the sanitized material on 10 November 2026 and confirmed publication authority. No open-source license is granted. The confidential source runbook is deliberately excluded. All infrastructure identities are placeholders. Read the [publication review](docs/publication-review.md) before sharing this project.
 
 **Maintenance status:** this project records an implementation, not a supported turnkey distribution. Community ingress-nginx retired in March 2026; new deployments require a maintained transport design and compatibility testing. See [version and evidence boundaries](docs/evidence.md).
 
@@ -79,7 +79,7 @@ Start with the [failure isolation matrix](docs/troubleshooting.md). A healthy po
 
 The most useful [lessons](docs/lessons-learned.md) are operational: named ACLs can defeat apparent group access, broad filters can charge every stream for another stream's processing, certificate renewal and host deployment are different tasks, and queues buy finite recovery time.
 
-See [Elasticsearch and search](docs/elasticsearch.md), [optional journal collection](docs/optional-journal.md), [source coverage](docs/source-coverage.md), [quality report](docs/quality-report.md), [publishing steps](docs/publishing.md), and the [LinkedIn draft guide](linkedin/publishing-guide.md).
+See [Elasticsearch and search](docs/elasticsearch.md), [optional journal collection](docs/optional-journal.md), [source coverage](docs/source-coverage.md), [quality report](docs/quality-report.md), [publishing steps](docs/publishing.md), and [contribution guidelines](CONTRIBUTING.md).
 
 ## Local documentation checks
 

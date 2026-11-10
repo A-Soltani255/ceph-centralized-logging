@@ -25,3 +25,5 @@ node_modules/
 reports/
 .DS_Store
 Thumbs.db
+# Social drafts and media are managed separately from this technical repository.
+linkedin/

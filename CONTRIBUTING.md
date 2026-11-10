@@ -1,6 +1,6 @@
 # Contributing
 
-This repository is a private publication-review draft with unresolved ownership and licensing. Do not treat availability as permission to redistribute or contribute third-party/company-owned material. Establish contribution rights first.
+This repository is publicly visible with owner-authorized publication of the sanitized material. Licensing remains undecided; no open-source license is granted. Do not treat availability as permission to redistribute or contribute third-party/company-owned material. Establish contribution rights first.
 
 Keep changes small and evidence-based. Label a configuration as a sanitized snapshot, an example, a recommendation or unverified. Do not overwrite historical snapshots with tuning changes; add a reviewed version and update provenance. Explain the operational trigger, new behavior, security implications and rollback in each pull request.
 
