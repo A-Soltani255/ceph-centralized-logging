@@ -1,0 +1,27 @@
+# Confidential source and operational exports must never be staged.
+*Runbook*
+*runbook*
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt
+*.cer
+*.env
+.env*
+!*.env.example
+*secret*.yaml
+*secret*.yml
+*-before.yaml
+*kubeconfig*
+*.db
+*.db-*
+*.wal
+*.log
+storage/
+backups/
+private/
+node_modules/
+reports/
+.DS_Store
+Thumbs.db
