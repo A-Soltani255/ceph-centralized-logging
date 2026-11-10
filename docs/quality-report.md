@@ -23,7 +23,7 @@ Review date: **10 November 2026**. The environment was a Windows documentation w
 
 ShellCheck, Gitleaks and kubeconform portable archives were downloaded from their official GitHub release assets and checked against release SHA-256 digests before execution. Dependency audit is point-in-time screening, not a guarantee of security. `re2js` and `katex` overrides pin patched versions; rerun syntax/render checks when updating them.
 
-The Git history scan and final whitespace/status checks are recorded in the delivery report after local commits are created. No CI-success badge is shown. The workflow is prepared; a remote successful run must be observed separately before claiming CI success.
+The Git history scan and final whitespace/status checks are recorded in the delivery report after local commits are created. No CI-success badge is shown. [GitHub Actions run 1](https://github.com/A-Soltani255/ceph-centralized-logging/actions/runs/42790818572) completed successfully for commit `4fa5c2a1e67184acb4e3943f05737a0c15e23c16`. Its job includes repository/navigation checks, Markdown, Mermaid, Bash/ShellCheck, a full Git-history secret scan and the two native Kubernetes example schema checks. This verifies repository artifacts, not a deployed logging pipeline.
 
 ## Skipped or unverified
 
