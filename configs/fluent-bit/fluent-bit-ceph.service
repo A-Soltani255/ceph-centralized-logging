@@ -1,0 +1,26 @@
+[Unit]
+Description=Fluent Bit Ceph Log Collector
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=ceph-logreader
+Group=ceph-logreader
+EnvironmentFile=/etc/fluent-bit/ceph.env
+ExecStart=/usr/bin/fluent-bit -c /etc/fluent-bit/ceph.conf
+Restart=on-failure
+RestartSec=10
+CPUQuota=200%
+MemoryMax=256M
+Nice=10
+IOSchedulingClass=idle
+LimitNOFILE=65536
+NoNewPrivileges=true
+ProtectHome=true
+ProtectSystem=strict
+ReadOnlyPaths=/var/log/ceph
+ReadWritePaths=/var/lib/fluent-bit-ceph
+
+[Install]
+WantedBy=multi-user.target
